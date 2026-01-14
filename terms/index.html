@@ -1,39 +1,318 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="system">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SoriCue — Terms of Service</title>
+  <title>SoriCue — Terms</title>
+
+  <meta name="description" content="SoriCue 이용약관 / Terms of Service" />
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script defer src="../assets/site.js"></script>
+
   <style>
-    body { font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; margin:0; padding:40px; line-height:1.8; }
-    .card { max-width:860px; margin:0 auto; }
-    .muted { color:#666; }
+    /* 문서 페이지(약관/개인정보/지원) 공통으로 쓰기 좋은 최소 스타일 */
+    .docWrap { margin-top: 18px; }
+    .docTop {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .docTitle {
+      margin: 0;
+      font-size: clamp(22px, 2.6vw, 32px);
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+    .docMeta { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .crumb a { color: var(--muted); text-decoration:none; }
+    .crumb a:hover { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+    .docBody h3 { margin: 18px 0 8px; font-size: 16px; letter-spacing: -0.2px; }
+    .docBody p { margin: 0 0 10px; color: var(--muted); line-height: 1.85; }
+    .docBody ul { margin: 0 0 12px 18px; color: var(--muted); line-height: 1.85; }
+    .docBody li { margin: 6px 0; }
+    .docDivider { height: 1px; background: var(--line); margin: 14px 0; }
+    .noteBox {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 13px;
+    }
+    .docBody a { color: inherit; }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <p><a href="/">← Home</a></p>
-    <h1>Terms of Service</h1>
-    <p class="muted">최종 업데이트: 2026-01-14</p>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <h3>1. 서비스</h3>
-    <p>SoriCue는 macOS에서 음성 입력 및 생산성 기능을 제공하는 소프트웨어입니다.</p>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <a class="brandLink" href="../" aria-label="SoriCue Home">SoriCue</a>
+        <span class="badge" data-i18n="badge_platform">macOS</span>
+      </div>
 
-    <h3>2. 라이선스</h3>
-    <ul>
-      <li>구매/구독을 통해 라이선스를 사용할 수 있습니다.</li>
-      <li>라이선스는 기본적으로 최대 2대 기기에서 활성화할 수 있습니다.</li>
-      <li>부정 사용(공유/재판매/우회 등)이 확인될 경우 이용이 제한될 수 있습니다.</li>
-    </ul>
+      <nav class="links" aria-label="Primary">
+        <a href="../" data-i18n="nav_home">Home</a>
+        <a href="../support/" data-i18n="nav_support">Support</a>
+        <a href="../privacy/" data-i18n="nav_privacy">Privacy</a>
+        <a href="./" data-i18n="nav_terms" aria-current="page">Terms</a>
+      </nav>
 
-    <h3>3. 결제/환불</h3>
-    <p>결제, 구독 변경, 환불은 결제 제공업체의 정책 및 관련 법령을 따릅니다. 지원이 필요하면 Support 페이지의 이메일로 문의해 주세요.</p>
+      <div class="navActions">
+        <button class="btn ghost small" id="themeToggle" type="button">
+          <span class="icon" aria-hidden="true">◐</span>
+          <span data-i18n="btn_theme">Theme</span>
+        </button>
+        <button class="btn ghost small" id="langToggle" type="button">
+          <span class="icon" aria-hidden="true">🌐</span>
+          <span id="langLabel">KR</span>
+        </button>
+      </div>
+    </header>
 
-    <h3>4. 면책</h3>
-    <p>서비스는 “있는 그대로” 제공되며, 사용 환경에 따른 일부 기능 제한 또는 장애가 발생할 수 있습니다. 간접/특수/부수적 손해에 대해서는 관련 법령이 허용하는 범위 내에서 책임을 제한합니다.</p>
+    <main id="main" class="hero docWrap">
+      <section class="section">
+        <div class="docTop">
+          <div class="crumb">
+            <a href="../">← <span data-i18n="nav_home">Home</span></a>
+          </div>
+          <div class="docMeta">
+            <span data-lang="ko">최종 업데이트: <time datetime="2026-01-14">2026-01-14</time></span>
+            <span data-lang="en" hidden>Last updated: <time datetime="2026-01-14">2026-01-14</time></span>
+          </div>
+        </div>
 
-    <h3>5. 문의</h3>
-    <p>문의: <a href="mailto:support@soricue.com">support@soricue.com</a></p>
+        <h1 class="docTitle" data-lang="ko">이용약관</h1>
+        <h1 class="docTitle" data-lang="en" hidden>Terms of Service</h1>
+
+        <div class="docDivider"></div>
+
+        <!-- 한국어 -->
+        <div class="docBody" data-lang="ko">
+          <p>
+            본 이용약관(이하 “약관”)은 SoriCue(이하 “회사”)가 제공하는 macOS 소프트웨어 및 관련 서비스(이하 “서비스”)의 이용에 관한 조건과 절차,
+            회사와 이용자 간의 권리·의무 및 책임사항을 정합니다.
+          </p>
+
+          <h3>1. 정의</h3>
+          <ul>
+            <li>“서비스”란 SoriCue 앱, 업데이트, 라이선스 활성화, 고객지원, 관련 웹페이지 등을 포함합니다.</li>
+            <li>“이용자”란 본 약관에 동의하고 서비스를 이용하는 개인 또는 법인을 의미합니다.</li>
+            <li>“라이선스”란 소프트웨어를 사용할 수 있는 권한(구매/구독 등으로 부여되는 이용권)을 의미합니다.</li>
+          </ul>
+
+          <h3>2. 약관의 동의 및 적용</h3>
+          <ul>
+            <li>이용자는 서비스 이용 시 본 약관에 동의한 것으로 봅니다.</li>
+            <li>회사는 서비스 운영상 필요에 따라 약관을 변경할 수 있으며, 변경 시 합리적인 방법으로 공지합니다.</li>
+          </ul>
+
+          <h3>3. 서비스 제공 및 변경</h3>
+          <ul>
+            <li>회사는 음성 입력(받아쓰기), 명령 실행, 생산성 기능, AI 기반 작업 흐름 등을 제공할 수 있습니다.</li>
+            <li>서비스의 일부 기능은 운영체제 버전, 권한 설정, 네트워크 환경, 제3자 서비스 상태 등에 따라 제한될 수 있습니다.</li>
+            <li>회사는 품질 개선, 보안, 법적 준수 등을 위해 기능을 추가/변경/중단할 수 있습니다.</li>
+          </ul>
+
+          <h3>4. 라이선스 및 사용 범위</h3>
+          <ul>
+            <li>회사는 이용자에게 비독점적, 양도 불가, 재라이선스 불가, 제한적 사용권을 부여합니다.</li>
+            <li>라이선스는 기본적으로 최대 2대 기기에서 활성화할 수 있습니다(정책은 상품/플랜에 따라 달라질 수 있음).</li>
+            <li>이용자는 라이선스를 제3자에게 공유, 대여, 재판매하거나 우회(크랙/키 공유/불법 활성화 등)할 수 없습니다.</li>
+            <li>부정 사용이 확인되거나 합리적으로 의심되는 경우, 회사는 라이선스 비활성화/이용 제한 등 필요한 조치를 취할 수 있습니다.</li>
+          </ul>
+
+          <h3>5. 결제, 구독, 환불</h3>
+          <ul>
+            <li>결제, 구독 변경/해지, 환불은 결제 제공업체의 정책 및 관련 법령을 따릅니다.</li>
+            <li>디지털 상품/소프트웨어의 특성상, 사용/활성화/다운로드가 개시된 경우 환불이 제한될 수 있습니다(관련 법령이 허용하는 범위 내).</li>
+            <li>결제 관련 문의는 Support 페이지 또는 아래 이메일로 연락해 주십시오.</li>
+          </ul>
+
+          <h3>6. 업데이트 및 자동 업데이트</h3>
+          <ul>
+            <li>회사는 보안/안정성/기능 개선을 위해 업데이트를 제공할 수 있습니다.</li>
+            <li>일부 배포 채널에서는 자동 업데이트(Sparkle 등)가 동작할 수 있으며, 업데이트에 따라 UI/기능/정책이 변경될 수 있습니다.</li>
+          </ul>
+
+          <h3>7. 이용자의 의무 및 금지행위</h3>
+          <ul>
+            <li>이용자는 관련 법령 및 본 약관을 준수해야 합니다.</li>
+            <li>다음 행위는 금지됩니다: 무단 복제/배포, 역공학/소스 추출 시도(법령상 허용 범위 제외), 보안 우회, 서비스 장애 유발, 권리 침해 행위 등</li>
+            <li>이용자는 본인의 환경에서 발생하는 데이터 입력/녹음/전사/AI 처리에 대해 필요한 권리(저작권, 초상권, 동의 등)를 확보해야 합니다.</li>
+          </ul>
+
+          <h3>8. 개인정보</h3>
+          <p>
+            개인정보 처리에 관한 사항은 Privacy 페이지의 개인정보처리방침을 따릅니다.
+          </p>
+
+          <h3>9. 지식재산권</h3>
+          <ul>
+            <li>서비스 및 관련 콘텐츠에 대한 권리는 회사 또는 정당한 권리자에게 귀속됩니다.</li>
+            <li>이용자는 서비스 이용을 통해 회사의 상표, 로고, 소프트웨어를 무단으로 사용할 수 없습니다.</li>
+          </ul>
+
+          <h3>10. 면책 및 보증 부인</h3>
+          <ul>
+            <li>서비스는 “있는 그대로(as-is)” 제공되며, 회사는 특정 목적 적합성, 무오류, 중단 없음 등을 보증하지 않습니다.</li>
+            <li>음성 인식/AI 결과는 환경 및 데이터에 따라 정확도가 달라질 수 있으며, 이용자는 결과를 검토하여 사용해야 합니다.</li>
+          </ul>
+
+          <h3>11. 책임 제한</h3>
+          <ul>
+            <li>회사는 관련 법령이 허용하는 범위 내에서 간접/특수/부수적 손해(영업손실, 데이터 손실 등)에 대해 책임을 제한합니다.</li>
+            <li>회사의 총 책임은 원칙적으로 이용자가 해당 손해 발생 전 12개월 동안 회사에 실제로 지급한 금액을 한도로 합니다(법령상 제한 불가한 경우 제외).</li>
+          </ul>
+
+          <h3>12. 계약 해지 및 이용 제한</h3>
+          <ul>
+            <li>이용자는 언제든지 서비스 사용을 중단하고 구독을 해지할 수 있습니다(결제 제공업체 절차에 따름).</li>
+            <li>회사는 약관 위반, 부정 사용, 보안 위협 등이 있는 경우 사전 통지 후(또는 긴급 시 사후 통지) 이용을 제한할 수 있습니다.</li>
+          </ul>
+
+          <h3>13. 준거법 및 관할</h3>
+          <p>
+            본 약관은 대한민국 법령에 따라 해석되며, 분쟁이 발생할 경우 민사소송법상 관할 법원을 전속 관할로 합니다.
+          </p>
+
+          <h3>14. 문의</h3>
+          <p>
+            문의: <a href="mailto:support@soricue.com">support@soricue.com</a>
+          </p>
+
+          <div class="noteBox">
+            본 문서는 일반적인 템플릿이며, 개별 비즈니스 상황에 따라 조정이 필요할 수 있습니다.
+          </div>
+        </div>
+
+        <!-- English -->
+        <div class="docBody" data-lang="en" hidden>
+          <p>
+            These Terms of Service (the “Terms”) govern your use of the SoriCue macOS software and related services (the “Service”)
+            provided by SoriCue (the “Company”). By using the Service, you agree to these Terms.
+          </p>
+
+          <h3>1. Definitions</h3>
+          <ul>
+            <li>“Service” includes the SoriCue app, updates, license activation, customer support, and related web pages.</li>
+            <li>“User” means any individual or entity that uses the Service.</li>
+            <li>“License” means the right to use the software granted through a purchase/subscription plan.</li>
+          </ul>
+
+          <h3>2. Acceptance & Applicability</h3>
+          <ul>
+            <li>Your use of the Service constitutes acceptance of these Terms.</li>
+            <li>We may update these Terms when reasonably necessary and will provide notice through reasonable means.</li>
+          </ul>
+
+          <h3>3. Service Availability & Changes</h3>
+          <ul>
+            <li>The Service may include dictation, command execution, productivity features, and AI-powered workflows.</li>
+            <li>Some features may be limited depending on OS version, permissions, network conditions, or third-party service availability.</li>
+            <li>We may add, change, or discontinue features for quality, security, or legal compliance.</li>
+          </ul>
+
+          <h3>4. License & Scope of Use</h3>
+          <ul>
+            <li>We grant you a non-exclusive, non-transferable, non-sublicensable, limited license to use the software.</li>
+            <li>Licenses are typically limited to activation on up to two (2) devices (may vary by plan/product).</li>
+            <li>You may not share, rent, resell, or circumvent licensing (cracks, key sharing, illegal activation, etc.).</li>
+            <li>If misuse is confirmed (or reasonably suspected), we may suspend or deactivate the license as necessary.</li>
+          </ul>
+
+          <h3>5. Payments, Subscriptions & Refunds</h3>
+          <ul>
+            <li>Payments, subscription changes/cancellations, and refunds follow the payment provider’s policies and applicable laws.</li>
+            <li>Due to the nature of digital goods/software, refunds may be restricted once download/activation/use has started, where permitted by law.</li>
+            <li>For help, contact us via Support or the email below.</li>
+          </ul>
+
+          <h3>6. Updates & Auto Updates</h3>
+          <ul>
+            <li>We may provide updates for security, stability, or feature improvements.</li>
+            <li>Some distribution channels may enable auto-updates (e.g., Sparkle). Updates may change UI, features, or policies.</li>
+          </ul>
+
+          <h3>7. User Responsibilities & Prohibited Conduct</h3>
+          <ul>
+            <li>You must comply with applicable laws and these Terms.</li>
+            <li>Prohibited actions include unauthorized copying/distribution, reverse engineering (except where legally permitted), security circumvention, service disruption, and IP infringement.</li>
+            <li>You are responsible for ensuring you have the necessary rights/consents for any audio, transcription, or AI processing you perform.</li>
+          </ul>
+
+          <h3>8. Privacy</h3>
+          <p>
+            Our handling of personal data is described in the Privacy Policy on the Privacy page.
+          </p>
+
+          <h3>9. Intellectual Property</h3>
+          <ul>
+            <li>The Service and related content are owned by the Company or its licensors.</li>
+            <li>You may not use our trademarks, logos, or software outside the scope allowed by these Terms.</li>
+          </ul>
+
+          <h3>10. Disclaimer of Warranties</h3>
+          <ul>
+            <li>The Service is provided “as is,” and we do not warrant uninterrupted, error-free operation or fitness for a particular purpose.</li>
+            <li>Speech recognition/AI outputs can vary by environment and data; you should review results before relying on them.</li>
+          </ul>
+
+          <h3>11. Limitation of Liability</h3>
+          <ul>
+            <li>To the extent permitted by law, we are not liable for indirect, special, incidental, or consequential damages (lost profits, data loss, etc.).</li>
+            <li>Our total liability will not exceed the amount you paid to us in the twelve (12) months preceding the event giving rise to the claim, unless prohibited by law.</li>
+          </ul>
+
+          <h3>12. Termination & Suspension</h3>
+          <ul>
+            <li>You may stop using the Service at any time and cancel subscriptions through the payment provider’s process.</li>
+            <li>We may suspend access for violations, misuse, or security threats, with notice when reasonable (or after in urgent cases).</li>
+          </ul>
+
+          <h3>13. Governing Law & Jurisdiction</h3>
+          <p>
+            These Terms are governed by the laws of the Republic of Korea, and disputes will be handled by the competent courts under applicable procedural law.
+          </p>
+
+          <h3>14. Contact</h3>
+          <p>
+            Contact: <a href="mailto:support@soricue.com">support@soricue.com</a>
+          </p>
+
+          <div class="noteBox">
+            This document is a general template and may require adjustments for your specific business needs.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footerLeft">
+        <div>© <span id="y"></span> SoriCue</div>
+        <div class="footerFine" data-i18n="footer_note">Built for macOS productivity</div>
+      </div>
+
+      <div class="footerLinks">
+        <a href="../privacy/" data-i18n="nav_privacy">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a href="./" data-i18n="nav_terms">Terms</a>
+        <span aria-hidden="true">·</span>
+        <a href="../support/" data-i18n="nav_support">Support</a>
+      </div>
+    </footer>
   </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
