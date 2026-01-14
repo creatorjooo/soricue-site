@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SoriCue</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">SoriCue</div>
+      <nav class="links">
+        <a href="./">Home</a>
+        <a href="./support/">Support</a>
+        <a href="./privacy/">Privacy</a>
+        <a href="./terms/">Terms</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <h1>SoriCue — 말하면, 바로 실행됩니다.</h1>
+      <p>
+        메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱입니다.
+        v0.1은 “설치 가능 + 자동 업데이트 + 라이선스(2대)” 상태를 목표로 준비 중입니다.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#" onclick="alert('다운로드 링크는 준비 중입니다.'); return false;">Download (Coming soon)</a>
+        <a class="btn" href="./support/">Support</a>
+      </div>
+
+      <section class="grid">
+        <div class="card">
+          <h3>빠른 입력</h3>
+          <p>어떤 앱에서도 즉시 텍스트 입력</p>
+        </div>
+        <div class="card">
+          <h3>자동 업데이트</h3>
+          <p>Sparkle 기반 업데이트 운영</p>
+        </div>
+        <div class="card">
+          <h3>라이선스</h3>
+          <p>2대 활성화 제한을 기본으로</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> SoriCue</div>
+      <div class="footerLinks">
+        <a href="./privacy/">Privacy</a> · <a href="./terms/">Terms</a> · <a href="./support/">Support</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
