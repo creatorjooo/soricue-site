@@ -1,59 +1,218 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="system">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SoriCue</title>
+  <title>SoriCue — Speak. Trigger. Done.</title>
+
+  <meta name="description" content="SoriCue는 macOS 메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 앱입니다." />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SoriCue — Speak. Trigger. Done." />
+  <meta property="og:description" content="메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱" />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="assets/og.png" /> -->
+
+  <!-- Favicon (원하시면 assets/favicon.svg 만들어서 연결하세요) -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
   <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/site.js"></script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <div class="wrap">
     <header class="nav">
-      <div class="brand">SoriCue</div>
-      <nav class="links">
-        <a href="./">Home</a>
-        <a href="./support/">Support</a>
-        <a href="./privacy/">Privacy</a>
-        <a href="./terms/">Terms</a>
-      </nav>
-    </header>
-
-    <main class="hero">
-      <h1>SoriCue — 말하면, 바로 실행됩니다.</h1>
-      <p>
-        메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱입니다.
-        v0.1은 “설치 가능 + 자동 업데이트 + 라이선스(2대)” 상태를 목표로 준비 중입니다.
-      </p>
-
-      <div class="cta">
-        <a class="btn primary" href="#" onclick="alert('다운로드 링크는 준비 중입니다.'); return false;">Download (Coming soon)</a>
-        <a class="btn" href="./support/">Support</a>
+      <div class="brand">
+        <a class="brandLink" href="./" aria-label="SoriCue Home">SoriCue</a>
+        <span class="badge" data-i18n="badge_platform">macOS</span>
       </div>
 
-      <section class="grid">
-        <div class="card">
-          <h3>빠른 입력</h3>
-          <p>어떤 앱에서도 즉시 텍스트 입력</p>
+      <nav class="links" aria-label="Primary">
+        <a href="./" data-i18n="nav_home">Home</a>
+        <a href="./support/" data-i18n="nav_support">Support</a>
+        <a href="./privacy/" data-i18n="nav_privacy">Privacy</a>
+        <a href="./terms/" data-i18n="nav_terms">Terms</a>
+      </nav>
+
+      <div class="navActions">
+        <button class="btn ghost small" id="themeToggle" type="button">
+          <span class="icon" aria-hidden="true">◐</span>
+          <span data-i18n="btn_theme">Theme</span>
+        </button>
+        <button class="btn ghost small" id="langToggle" type="button">
+          <span class="icon" aria-hidden="true">🌐</span>
+          <span id="langLabel">KR</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="hero">
+      <section class="heroTop">
+        <div class="heroCopy">
+          <h1 data-i18n="hero_title">SoriCue — 말하면, 바로 실행됩니다.</h1>
+          <p class="lead" data-i18n="hero_subtitle">
+            메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱입니다.
+          </p>
+
+          <div class="pillRow" aria-label="Highlights">
+            <span class="pill" data-i18n="pill_1">Push-to-Talk</span>
+            <span class="pill" data-i18n="pill_2">Dictation</span>
+            <span class="pill" data-i18n="pill_3">Commands</span>
+            <span class="pill" data-i18n="pill_4">AI Actions</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#" id="downloadBtn">
+              <span data-i18n="btn_download">Download</span>
+              <span class="sub" data-i18n="btn_download_sub">Coming soon</span>
+            </a>
+            <a class="btn" href="./support/" data-i18n="btn_support">Support</a>
+            <a class="btn ghost" href="mailto:support@soricue.app?subject=SoriCue%20Waitlist" data-i18n="btn_waitlist">
+              Get notified
+            </a>
+          </div>
+
+          <p class="fine" data-i18n="hero_note">
+            v0.1 목표: 설치 가능 + 자동 업데이트 + 라이선스(2대) 기반을 안정적으로 완성합니다.
+          </p>
         </div>
-        <div class="card">
-          <h3>자동 업데이트</h3>
-          <p>Sparkle 기반 업데이트 운영</p>
+
+        <div class="heroCard" role="region" aria-label="Product preview">
+          <div class="previewHeader">
+            <div class="dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="previewTitle" data-i18n="preview_title">Menu Bar • Instant Actions</div>
+          </div>
+
+          <div class="previewBody">
+            <div class="previewLine">
+              <span class="k" data-i18n="preview_k1">Hotkey</span>
+              <span class="v">⌥ Space</span>
+            </div>
+            <div class="previewLine">
+              <span class="k" data-i18n="preview_k2">Mode</span>
+              <span class="v" data-i18n="preview_v2">Hold to talk</span>
+            </div>
+            <div class="previewLine">
+              <span class="k" data-i18n="preview_k3">Output</span>
+              <span class="v" data-i18n="preview_v3">Paste into any app</span>
+            </div>
+            <div class="previewDivider"></div>
+            <div class="previewMono" data-i18n="preview_mono">
+              “회의 요약 3줄로 정리해줘”
+            </div>
+          </div>
+
+          <div class="previewFooter">
+            <span class="statusDot" aria-hidden="true"></span>
+            <span data-i18n="preview_footer">Fast • Minimal • Reliable</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>라이선스</h3>
-          <p>2대 활성화 제한을 기본으로</p>
+      </section>
+
+      <section class="grid" aria-label="Key features">
+        <article class="card">
+          <h3 data-i18n="f1_title">빠른 입력</h3>
+          <p data-i18n="f1_desc">어떤 앱에서도 즉시 텍스트 입력</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="f2_title">자동 업데이트</h3>
+          <p data-i18n="f2_desc">Sparkle 기반 업데이트 운영</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="f3_title">라이선스</h3>
+          <p data-i18n="f3_desc">기본 2대 활성화 제한을 지원</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <header class="sectionHead">
+          <h2 data-i18n="how_title">How it works</h2>
+          <p data-i18n="how_subtitle">짧게 말하면, 입력/명령/AI 작업을 “한 흐름”으로 처리합니다.</p>
+        </header>
+
+        <div class="steps">
+          <div class="step">
+            <div class="stepNum">1</div>
+            <div class="stepBody">
+              <div class="stepTitle" data-i18n="s1_title">Push-to-Talk</div>
+              <div class="stepDesc" data-i18n="s1_desc">단축키로 바로 말하기 시작</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="stepNum">2</div>
+            <div class="stepBody">
+              <div class="stepTitle" data-i18n="s2_title">Transcribe / Interpret</div>
+              <div class="stepDesc" data-i18n="s2_desc">받아쓰기 또는 명령/AI 작업으로 분기</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="stepNum">3</div>
+            <div class="stepBody">
+              <div class="stepTitle" data-i18n="s3_title">Insert</div>
+              <div class="stepDesc" data-i18n="s3_desc">현재 커서 위치에 즉시 입력/실행</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="sectionHead">
+          <h2 data-i18n="road_title">v0.1 Roadmap</h2>
+          <p data-i18n="road_subtitle">먼저 “배포 가능한 기본기”부터 확실하게 만듭니다.</p>
+        </header>
+
+        <div class="road">
+          <div class="roadItem">
+            <div class="roadDot" aria-hidden="true"></div>
+            <div>
+              <div class="roadTitle" data-i18n="r1_title">Installer</div>
+              <div class="roadDesc" data-i18n="r1_desc">설치/실행/권한 흐름을 안정화</div>
+            </div>
+          </div>
+          <div class="roadItem">
+            <div class="roadDot" aria-hidden="true"></div>
+            <div>
+              <div class="roadTitle" data-i18n="r2_title">Auto Update</div>
+              <div class="roadDesc" data-i18n="r2_desc">Sparkle 기반 업데이트 채널 운영</div>
+            </div>
+          </div>
+          <div class="roadItem">
+            <div class="roadDot" aria-hidden="true"></div>
+            <div>
+              <div class="roadTitle" data-i18n="r3_title">License (2 devices)</div>
+              <div class="roadDesc" data-i18n="r3_desc">2대 제한 라이선스 플로우 정리</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="calloutTitle" data-i18n="callout_title">Business-ready basics</div>
+          <div class="calloutDesc" data-i18n="callout_desc">
+            “설치/업데이트/라이선스”가 갖춰지면 제품 신뢰도가 확 올라갑니다.
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div>© <span id="y"></span> SoriCue</div>
+      <div class="footerLeft">
+        <div>© <span id="y"></span> SoriCue</div>
+        <div class="footerFine" data-i18n="footer_note">Built for macOS productivity</div>
+      </div>
+
       <div class="footerLinks">
-        <a href="./privacy/">Privacy</a> · <a href="./terms/">Terms</a> · <a href="./support/">Support</a>
+        <a href="./privacy/" data-i18n="nav_privacy">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a href="./terms/" data-i18n="nav_terms">Terms</a>
+        <span aria-hidden="true">·</span>
+        <a href="./support/" data-i18n="nav_support">Support</a>
       </div>
     </footer>
   </div>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
