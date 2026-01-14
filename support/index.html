@@ -1,41 +1,303 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="system">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SoriCue — Support</title>
+
+  <meta name="description" content="SoriCue 고객지원 / Support" />
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script defer src="../assets/site.js"></script>
+
   <style>
-    body { font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; margin:0; padding:40px; line-height:1.7; }
-    .card { max-width:860px; margin:0 auto; }
-    a { color:inherit; }
-    .muted { color:#666; }
-    .box { border:1px solid #eee; border-radius:12px; padding:16px; margin:16px 0; }
+    .docWrap { margin-top: 18px; }
+    .docTop{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:12px; flex-wrap:wrap; margin-bottom:10px;
+    }
+    .docTitle{
+      margin:0;
+      font-size: clamp(22px, 2.6vw, 32px);
+      letter-spacing:-0.3px;
+      line-height:1.2;
+    }
+    .docMeta{ color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .crumb a{ color: var(--muted); text-decoration:none; }
+    .crumb a:hover{ color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+
+    .docDivider{ height:1px; background: var(--line); margin: 14px 0; }
+
+    .supportGrid{
+      display:grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 14px;
+      align-items:start;
+    }
+
+    .boxTitle{ margin:0 0 8px 0; font-size:16px; letter-spacing:-0.2px; }
+    .boxText{ margin:0; color: var(--muted); line-height: 1.85; }
+
+    .hint{
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .kvs{
+      margin-top: 10px;
+      display:grid;
+      gap: 10px;
+    }
+    .kv{
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+    }
+    .kv .k{ color: var(--muted); font-weight: 800; font-size: 13px; }
+    .kv .v{ font-weight: 900; font-size: 13px; }
+
+    .btnRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+      align-items:center;
+    }
+
+    .faq{
+      margin-top: 14px;
+      display:grid;
+      gap: 10px;
+    }
+    details{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius2);
+      padding: 12px 12px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 900;
+      color: var(--text);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0; color: var(--muted); line-height: 1.85; }
+
+    .contactCard a{ color: inherit; }
+
+    @media (max-width: 960px){
+      .supportGrid{ grid-template-columns: 1fr; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <p><a href="/">← Home</a></p>
-    <h1>Support</h1>
-    <p class="muted">SoriCue 고객 지원 페이지입니다.</p>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <div class="box">
-      <h3>문의</h3>
-      <p>이메일: <a href="mailto:support@soricue.com">support@soricue.com</a></p>
-      <p class="muted">가능하면 아래 정보를 함께 보내주시면 빠르게 도와드릴 수 있습니다.<br/>
-      - macOS 버전<br/>
-      - SoriCue 버전<br/>
-      - 문제 상황(가능하면 스크린샷/로그)</p>
-    </div>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <a class="brandLink" href="../" aria-label="SoriCue Home">SoriCue</a>
+        <span class="badge" data-i18n="badge_platform">macOS</span>
+      </div>
 
-    <div class="box">
-      <h3>환불/결제</h3>
-      <p>결제/구독/환불은 결제 제공업체의 정책을 따릅니다. 결제 영수증 이메일 또는 주문 정보를 함께 보내주시면 확인 후 안내드립니다.</p>
-    </div>
+      <nav class="links" aria-label="Primary">
+        <a href="../" data-i18n="nav_home">Home</a>
+        <a href="./" data-i18n="nav_support" aria-current="page">Support</a>
+        <a href="../privacy/" data-i18n="nav_privacy">Privacy</a>
+        <a href="../terms/" data-i18n="nav_terms">Terms</a>
+      </nav>
 
-    <div class="box">
-      <h3>라이선스(2대) 안내</h3>
-      <p>라이선스는 기본적으로 최대 2대 기기에서 활성화할 수 있습니다. 기기 변경이 필요하면 기존 기기를 해제한 뒤 새 기기에서 활성화해 주세요.</p>
-    </div>
+      <div class="navActions">
+        <button class="btn ghost small" id="themeToggle" type="button">
+          <span class="icon" aria-hidden="true">◐</span>
+          <span data-i18n="btn_theme">Theme</span>
+        </button>
+        <button class="btn ghost small" id="langToggle" type="button">
+          <span class="icon" aria-hidden="true">🌐</span>
+          <span id="langLabel">KR</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="hero docWrap">
+      <section class="section">
+        <div class="docTop">
+          <div class="crumb">
+            <a href="../">← <span data-i18n="nav_home">Home</span></a>
+          </div>
+          <div class="docMeta">
+            <span data-lang="ko">SoriCue 고객지원</span>
+            <span data-lang="en" hidden>Customer Support</span>
+          </div>
+        </div>
+
+        <h1 class="docTitle" data-lang="ko">지원 센터</h1>
+        <h1 class="docTitle" data-lang="en" hidden>Support</h1>
+
+        <div class="docDivider"></div>
+
+        <div class="supportGrid">
+          <!-- Left: Contact + guidance -->
+          <div class="card contactCard">
+            <h3 class="boxTitle" data-lang="ko">문의하기</h3>
+            <h3 class="boxTitle" data-lang="en" hidden>Contact</h3>
+
+            <p class="boxText" data-lang="ko">
+              가장 빠른 방법은 이메일 문의입니다. 아래 버튼을 눌러 바로 메일을 작성하실 수 있습니다.
+            </p>
+            <p class="boxText" data-lang="en" hidden>
+              Email is the fastest way to reach us. Use the button below to start a support email.
+            </p>
+
+            <div class="btnRow">
+              <a class="btn primary" href="mailto:support@soricue.com?subject=SoriCue%20Support%20Request">
+                <span data-lang="ko">이메일 보내기</span>
+                <span data-lang="en" hidden>Email support</span>
+              </a>
+
+              <a class="btn" href="../terms/">
+                <span data-lang="ko">이용약관</span>
+                <span data-lang="en" hidden>Terms</span>
+              </a>
+
+              <a class="btn ghost" href="../privacy/">
+                <span data-lang="ko">개인정보처리방침</span>
+                <span data-lang="en" hidden>Privacy</span>
+              </a>
+            </div>
+
+            <div class="hint" data-lang="ko">
+              원활한 지원을 위해 아래 정보를 함께 보내주시면 도움이 됩니다.
+              <br/>- macOS 버전
+              <br/>- SoriCue 버전
+              <br/>- 재현 단계(무엇을 했을 때, 어떤 문제가 발생했는지)
+              <br/>- 가능하면 스크린샷 또는 관련 로그
+            </div>
+            <div class="hint" data-lang="en" hidden>
+              To help us resolve issues faster, please include:
+              <br/>- macOS version
+              <br/>- SoriCue version
+              <br/>- Steps to reproduce (what you did, what happened)
+              <br/>- Screenshots or relevant logs, if available
+            </div>
+
+            <div class="kvs" aria-label="Support email">
+              <div class="kv">
+                <div class="k" data-lang="ko">이메일</div>
+                <div class="k" data-lang="en" hidden>Email</div>
+                <div class="v"><a href="mailto:support@soricue.com">support@soricue.com</a></div>
+              </div>
+              <div class="kv">
+                <div class="k" data-lang="ko">권장 제목</div>
+                <div class="k" data-lang="en" hidden>Suggested subject</div>
+                <div class="v">SoriCue Support Request</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: FAQ -->
+          <div class="card">
+            <h3 class="boxTitle" data-lang="ko">자주 묻는 질문</h3>
+            <h3 class="boxTitle" data-lang="en" hidden>FAQ</h3>
+
+            <div class="faq">
+              <details>
+                <summary data-lang="ko">결제/구독/환불은 어디서 처리하나요?</summary>
+                <summary data-lang="en" hidden>How do payments, subscriptions, and refunds work?</summary>
+                <p data-lang="ko">
+                  결제/구독 변경/환불은 결제 제공업체의 정책 및 관련 법령을 따릅니다.
+                  가능하면 영수증 이메일 또는 주문/결제 정보를 함께 보내주시면 확인 후 안내드릴 수 있습니다.
+                </p>
+                <p data-lang="en" hidden>
+                  Payments, subscription changes/cancellations, and refunds follow the payment provider’s policies and applicable laws.
+                  Please include your receipt email or order/payment details so we can assist quickly.
+                </p>
+              </details>
+
+              <details>
+                <summary data-lang="ko">라이선스 2대 제한은 어떻게 동작하나요?</summary>
+                <summary data-lang="en" hidden>How does the 2-device license limit work?</summary>
+                <p data-lang="ko">
+                  라이선스는 기본적으로 최대 2대 기기에서 활성화할 수 있습니다(상품/플랜에 따라 달라질 수 있음).
+                  기기를 변경해야 한다면 기존 기기에서 비활성화 후 새 기기에서 활성화해 주세요.
+                </p>
+                <p data-lang="en" hidden>
+                  Licenses can typically be activated on up to two devices (may vary by plan/product).
+                  If you switch devices, deactivate on the previous device and activate on the new one.
+                </p>
+              </details>
+
+              <details>
+                <summary data-lang="ko">앱이 입력이 안 되거나 권한 문제가 있는 것 같아요.</summary>
+                <summary data-lang="en" hidden>Text injection or permissions seem blocked. What should I do?</summary>
+                <p data-lang="ko">
+                  macOS 권한(입력 모니터링, 손쉬운 사용, 마이크 등)이 필요한 기능이 있습니다.
+                  증상과 함께 macOS 버전/앱 버전, 권한 화면 캡처를 보내주시면 빠르게 안내드릴 수 있습니다.
+                </p>
+                <p data-lang="en" hidden>
+                  Some features require macOS permissions (Input Monitoring, Accessibility, Microphone, etc.).
+                  Send your macOS/app versions and screenshots of the permission screens for faster help.
+                </p>
+              </details>
+
+              <details>
+                <summary data-lang="ko">로그/진단 정보를 보내고 싶어요.</summary>
+                <summary data-lang="en" hidden>I want to send logs/diagnostics.</summary>
+                <p data-lang="ko">
+                  현재는 이메일로 첨부해 주시면 됩니다. 가능한 경우, 문제 발생 직후의 로그/스크린샷이 가장 도움이 됩니다.
+                </p>
+                <p data-lang="en" hidden>
+                  Please attach logs via email. Logs and screenshots captured right after the issue occurs are most helpful.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:14px;">
+          <div class="calloutTitle" data-lang="ko">지원 처리 안내</div>
+          <div class="calloutTitle" data-lang="en" hidden>Support expectations</div>
+
+          <div class="calloutDesc" data-lang="ko">
+            가능한 한 빠르게 답변드리겠습니다. 재현 정보가 충분할수록 해결 속도가 빨라집니다.
+          </div>
+          <div class="calloutDesc" data-lang="en" hidden>
+            We’ll respond as quickly as possible. Clear reproduction steps help us resolve issues faster.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footerLeft">
+        <div>© <span id="y"></span> SoriCue</div>
+        <div class="footerFine" data-i18n="footer_note">Built for macOS productivity</div>
+      </div>
+
+      <div class="footerLinks">
+        <a href="../privacy/" data-i18n="nav_privacy">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a href="../terms/" data-i18n="nav_terms">Terms</a>
+        <span aria-hidden="true">·</span>
+        <a href="./" data-i18n="nav_support">Support</a>
+      </div>
+    </footer>
   </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
