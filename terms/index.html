@@ -13,7 +13,6 @@
   <script defer src="../assets/site.js"></script>
 
   <style>
-    /* 문서 페이지(약관/개인정보/지원) 공통으로 쓰기 좋은 최소 스타일 */
     .docWrap { margin-top: 18px; }
     .docTop {
       display:flex;
@@ -46,6 +45,15 @@
       color: var(--muted);
       line-height: 1.75;
       font-size: 13px;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 12px;
     }
     .docBody a { color: inherit; }
   </style>
@@ -87,8 +95,8 @@
             <a href="../">← <span data-i18n="nav_home">Home</span></a>
           </div>
           <div class="docMeta">
-            <span data-lang="ko">최종 업데이트: <time datetime="2026-01-14">2026-01-14</time></span>
-            <span data-lang="en" hidden>Last updated: <time datetime="2026-01-14">2026-01-14</time></span>
+            <span data-lang="ko">최종 업데이트: <time datetime="2026-02-23">2026-02-23</time></span>
+            <span data-lang="en" hidden>Last updated: <time datetime="2026-02-23">2026-02-23</time></span>
           </div>
         </div>
 
@@ -97,7 +105,6 @@
 
         <div class="docDivider"></div>
 
-        <!-- 한국어 -->
         <div class="docBody" data-lang="ko">
           <p>
             본 이용약관(이하 “약관”)은 SoriCue(이하 “회사”)가 제공하는 macOS 소프트웨어 및 관련 서비스(이하 “서비스”)의 이용에 관한 조건과 절차,
@@ -157,46 +164,53 @@
             개인정보 처리에 관한 사항은 Privacy 페이지의 개인정보처리방침을 따릅니다.
           </p>
 
-          <h3>9. 지식재산권</h3>
+          <h3>9. Google 계정 연동 및 API 권한</h3>
+          <ul>
+            <li>서비스의 일부 기능은 Google 계정 연동을 통해 동작할 수 있습니다.</li>
+            <li>사용자 요청 기능 수행을 위해 Google OAuth 권한(예: <code>https://www.googleapis.com/auth/calendar.events</code>, <code>https://www.googleapis.com/auth/tasks</code>)을 요청할 수 있습니다.</li>
+            <li>해당 권한은 일정/할 일의 생성·조회·수정·삭제 등 사용자 요청 처리 목적에 한해 사용됩니다.</li>
+            <li>사용자는 언제든지 <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 권한 관리</a>에서 앱 권한을 철회할 수 있습니다.</li>
+          </ul>
+
+          <h3>10. 지식재산권</h3>
           <ul>
             <li>서비스 및 관련 콘텐츠에 대한 권리는 회사 또는 정당한 권리자에게 귀속됩니다.</li>
             <li>이용자는 서비스 이용을 통해 회사의 상표, 로고, 소프트웨어를 무단으로 사용할 수 없습니다.</li>
           </ul>
 
-          <h3>10. 면책 및 보증 부인</h3>
+          <h3>11. 면책 및 보증 부인</h3>
           <ul>
             <li>서비스는 “있는 그대로(as-is)” 제공되며, 회사는 특정 목적 적합성, 무오류, 중단 없음 등을 보증하지 않습니다.</li>
             <li>음성 인식/AI 결과는 환경 및 데이터에 따라 정확도가 달라질 수 있으며, 이용자는 결과를 검토하여 사용해야 합니다.</li>
           </ul>
 
-          <h3>11. 책임 제한</h3>
+          <h3>12. 책임 제한</h3>
           <ul>
             <li>회사는 관련 법령이 허용하는 범위 내에서 간접/특수/부수적 손해(영업손실, 데이터 손실 등)에 대해 책임을 제한합니다.</li>
             <li>회사의 총 책임은 원칙적으로 이용자가 해당 손해 발생 전 12개월 동안 회사에 실제로 지급한 금액을 한도로 합니다(법령상 제한 불가한 경우 제외).</li>
           </ul>
 
-          <h3>12. 계약 해지 및 이용 제한</h3>
+          <h3>13. 계약 해지 및 이용 제한</h3>
           <ul>
             <li>이용자는 언제든지 서비스 사용을 중단하고 구독을 해지할 수 있습니다(결제 제공업체 절차에 따름).</li>
             <li>회사는 약관 위반, 부정 사용, 보안 위협 등이 있는 경우 사전 통지 후(또는 긴급 시 사후 통지) 이용을 제한할 수 있습니다.</li>
           </ul>
 
-          <h3>13. 준거법 및 관할</h3>
+          <h3>14. 준거법 및 관할</h3>
           <p>
             본 약관은 대한민국 법령에 따라 해석되며, 분쟁이 발생할 경우 민사소송법상 관할 법원을 전속 관할로 합니다.
           </p>
 
-          <h3>14. 문의</h3>
+          <h3>15. 문의</h3>
           <p>
             문의: <a href="mailto:support@soricue.com">support@soricue.com</a>
           </p>
 
           <div class="noteBox">
-            본 문서는 일반적인 템플릿이며, 개별 비즈니스 상황에 따라 조정이 필요할 수 있습니다.
+            본 약관은 운영/법령 변경에 따라 수정될 수 있으며, 변경 시 합리적인 방식으로 공지합니다.
           </div>
         </div>
 
-        <!-- English -->
         <div class="docBody" data-lang="en" hidden>
           <p>
             These Terms of Service (the “Terms”) govern your use of the SoriCue macOS software and related services (the “Service”)
@@ -210,20 +224,20 @@
             <li>“License” means the right to use the software granted through a purchase/subscription plan.</li>
           </ul>
 
-          <h3>2. Acceptance & Applicability</h3>
+          <h3>2. Acceptance &amp; Applicability</h3>
           <ul>
             <li>Your use of the Service constitutes acceptance of these Terms.</li>
             <li>We may update these Terms when reasonably necessary and will provide notice through reasonable means.</li>
           </ul>
 
-          <h3>3. Service Availability & Changes</h3>
+          <h3>3. Service Availability &amp; Changes</h3>
           <ul>
             <li>The Service may include dictation, command execution, productivity features, and AI-powered workflows.</li>
             <li>Some features may be limited depending on OS version, permissions, network conditions, or third-party service availability.</li>
             <li>We may add, change, or discontinue features for quality, security, or legal compliance.</li>
           </ul>
 
-          <h3>4. License & Scope of Use</h3>
+          <h3>4. License &amp; Scope of Use</h3>
           <ul>
             <li>We grant you a non-exclusive, non-transferable, non-sublicensable, limited license to use the software.</li>
             <li>Licenses are typically limited to activation on up to two (2) devices (may vary by plan/product).</li>
@@ -231,20 +245,20 @@
             <li>If misuse is confirmed (or reasonably suspected), we may suspend or deactivate the license as necessary.</li>
           </ul>
 
-          <h3>5. Payments, Subscriptions & Refunds</h3>
+          <h3>5. Payments, Subscriptions &amp; Refunds</h3>
           <ul>
             <li>Payments, subscription changes/cancellations, and refunds follow the payment provider’s policies and applicable laws.</li>
             <li>Due to the nature of digital goods/software, refunds may be restricted once download/activation/use has started, where permitted by law.</li>
             <li>For help, contact us via Support or the email below.</li>
           </ul>
 
-          <h3>6. Updates & Auto Updates</h3>
+          <h3>6. Updates &amp; Auto Updates</h3>
           <ul>
             <li>We may provide updates for security, stability, or feature improvements.</li>
             <li>Some distribution channels may enable auto-updates (e.g., Sparkle). Updates may change UI, features, or policies.</li>
           </ul>
 
-          <h3>7. User Responsibilities & Prohibited Conduct</h3>
+          <h3>7. User Responsibilities &amp; Prohibited Conduct</h3>
           <ul>
             <li>You must comply with applicable laws and these Terms.</li>
             <li>Prohibited actions include unauthorized copying/distribution, reverse engineering (except where legally permitted), security circumvention, service disruption, and IP infringement.</li>
@@ -256,42 +270,50 @@
             Our handling of personal data is described in the Privacy Policy on the Privacy page.
           </p>
 
-          <h3>9. Intellectual Property</h3>
+          <h3>9. Google Account Integration and API Scopes</h3>
+          <ul>
+            <li>Some features may rely on Google account integration.</li>
+            <li>To perform user-requested features, we may request Google OAuth scopes such as <code>https://www.googleapis.com/auth/calendar.events</code> and <code>https://www.googleapis.com/auth/tasks</code>.</li>
+            <li>These scopes are used only to execute user-requested event/task creation, read, update, and deletion.</li>
+            <li>Users can revoke access at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.</li>
+          </ul>
+
+          <h3>10. Intellectual Property</h3>
           <ul>
             <li>The Service and related content are owned by the Company or its licensors.</li>
             <li>You may not use our trademarks, logos, or software outside the scope allowed by these Terms.</li>
           </ul>
 
-          <h3>10. Disclaimer of Warranties</h3>
+          <h3>11. Disclaimer of Warranties</h3>
           <ul>
             <li>The Service is provided “as is,” and we do not warrant uninterrupted, error-free operation or fitness for a particular purpose.</li>
             <li>Speech recognition/AI outputs can vary by environment and data; you should review results before relying on them.</li>
           </ul>
 
-          <h3>11. Limitation of Liability</h3>
+          <h3>12. Limitation of Liability</h3>
           <ul>
             <li>To the extent permitted by law, we are not liable for indirect, special, incidental, or consequential damages (lost profits, data loss, etc.).</li>
             <li>Our total liability will not exceed the amount you paid to us in the twelve (12) months preceding the event giving rise to the claim, unless prohibited by law.</li>
           </ul>
 
-          <h3>12. Termination & Suspension</h3>
+          <h3>13. Termination &amp; Suspension</h3>
           <ul>
             <li>You may stop using the Service at any time and cancel subscriptions through the payment provider’s process.</li>
             <li>We may suspend access for violations, misuse, or security threats, with notice when reasonable (or after in urgent cases).</li>
           </ul>
 
-          <h3>13. Governing Law & Jurisdiction</h3>
+          <h3>14. Governing Law &amp; Jurisdiction</h3>
           <p>
             These Terms are governed by the laws of the Republic of Korea, and disputes will be handled by the competent courts under applicable procedural law.
           </p>
 
-          <h3>14. Contact</h3>
+          <h3>15. Contact</h3>
           <p>
             Contact: <a href="mailto:support@soricue.com">support@soricue.com</a>
           </p>
 
           <div class="noteBox">
-            This document is a general template and may require adjustments for your specific business needs.
+            These Terms may be updated due to operational or legal changes, and we will provide notice through reasonable means.
           </div>
         </div>
       </section>
