@@ -5,20 +5,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SoriCue — Speak. Trigger. Done.</title>
 
-  <meta name="description" content="SoriCue는 macOS 메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 앱입니다." />
+  <meta name="description" content="SoriCue는 macOS 메뉴바에서 음성 입력으로 Google Calendar/Tasks 일정·할 일을 빠르게 처리하는 앱입니다." />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="SoriCue — Speak. Trigger. Done." />
-  <meta property="og:description" content="메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱" />
+  <meta property="og:description" content="메뉴바에서 음성 입력으로 Google Calendar/Tasks 일정·할 일을 빠르게 처리하는 macOS 앱" />
   <meta property="og:type" content="website" />
-  <!-- <meta property="og:image" content="assets/og.png" /> -->
 
-  <!-- Favicon (원하시면 assets/favicon.svg 만들어서 연결하세요) -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-
   <link rel="stylesheet" href="assets/style.css" />
   <script defer src="assets/site.js"></script>
+
+  <style>
+    .scopeLine {
+      margin-top: 8px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .scopeLine code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -57,6 +72,11 @@
             메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱입니다.
           </p>
 
+          <p class="fine" style="margin-top:10px;">
+            <span data-lang="ko">Google Calendar/Tasks를 연결하면 “내일 오전 6시 점심 일정 추가” 같은 요청을 실제 일정/할 일로 반영합니다.</span>
+            <span data-lang="en" hidden>When connected to Google Calendar/Tasks, SoriCue can execute requests like “Add a lunch event tomorrow at 6 AM” as real event/task updates.</span>
+          </p>
+
           <div class="pillRow" aria-label="Highlights">
             <span class="pill" data-i18n="pill_1">Push-to-Talk</span>
             <span class="pill" data-i18n="pill_2">Dictation</span>
@@ -70,7 +90,7 @@
               <span class="sub" data-i18n="btn_download_sub">Coming soon</span>
             </a>
             <a class="btn" href="./support/" data-i18n="btn_support">Support</a>
-            <a class="btn ghost" href="mailto:support@soricue.app?subject=SoriCue%20Waitlist" data-i18n="btn_waitlist">
+            <a class="btn ghost" href="mailto:support@soricue.com?subject=SoriCue%20Waitlist" data-i18n="btn_waitlist">
               Get notified
             </a>
           </div>
@@ -127,6 +147,67 @@
           <h3 data-i18n="f3_title">라이선스</h3>
           <p data-i18n="f3_desc">기본 2대 활성화 제한을 지원</p>
         </article>
+      </section>
+
+      <section class="section">
+        <header class="sectionHead">
+          <h2>
+            <span data-lang="ko">Google Calendar/Tasks 연동</span>
+            <span data-lang="en" hidden>Google Calendar/Tasks Integration</span>
+          </h2>
+          <p>
+            <span data-lang="ko">사용자가 요청한 일정/할 일 생성·조회·수정·삭제를 최소 권한으로 수행합니다.</span>
+            <span data-lang="en" hidden>We perform user-requested event/task create-read-update-delete with minimum required access.</span>
+          </p>
+        </header>
+
+        <div class="grid" aria-label="Google integration features">
+          <article class="card">
+            <h3>
+              <span data-lang="ko">일정 처리</span>
+              <span data-lang="en" hidden>Calendar operations</span>
+            </h3>
+            <p>
+              <span data-lang="ko">자연어 요청으로 Google Calendar 일정 생성/수정/삭제를 실행합니다.</span>
+              <span data-lang="en" hidden>Create, update, and delete Google Calendar events from natural-language requests.</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span data-lang="ko">할 일 처리</span>
+              <span data-lang="en" hidden>Task operations</span>
+            </h3>
+            <p>
+              <span data-lang="ko">Google Tasks 할 일 생성/수정/완료/삭제를 빠르게 처리합니다.</span>
+              <span data-lang="en" hidden>Create, edit, complete, and delete Google Tasks quickly.</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span data-lang="ko">권한/보안</span>
+              <span data-lang="en" hidden>Access & security</span>
+            </h3>
+            <p>
+              <span data-lang="ko">필요한 범위에서만 접근하며, 자세한 정책은 Privacy/Terms 페이지에 공개합니다.</span>
+              <span data-lang="en" hidden>Access is limited to required scopes only; details are published in our Privacy/Terms pages.</span>
+            </p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div class="calloutTitle">
+            <span data-lang="ko">Google API 데이터 사용 고지</span>
+            <span data-lang="en" hidden>Google API data use notice</span>
+          </div>
+          <div class="calloutDesc">
+            <span data-lang="ko">요청 범위, 데이터 사용 목적, 권한 철회 방법은 Privacy 정책의 “Google API 데이터 사용” 섹션에서 확인할 수 있습니다.</span>
+            <span data-lang="en" hidden>Requested scopes, usage purpose, and access-revocation steps are documented in the “Google API data use” section of our Privacy Policy.</span>
+          </div>
+          <p class="scopeLine"><code>https://www.googleapis.com/auth/calendar.events</code></p>
+          <p class="scopeLine"><code>https://www.googleapis.com/auth/tasks</code></p>
+        </div>
       </section>
 
       <section class="section">
@@ -214,5 +295,7 @@
       </div>
     </footer>
   </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
