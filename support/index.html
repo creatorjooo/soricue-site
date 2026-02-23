@@ -67,6 +67,7 @@
     }
     .kv .k{ color: var(--muted); font-weight: 800; font-size: 13px; }
     .kv .v{ font-weight: 900; font-size: 13px; }
+    .kv a{ color: inherit; }
 
     .btnRow{
       display:flex;
@@ -96,7 +97,28 @@
     summary::-webkit-details-marker{ display:none; }
     details p{ margin: 10px 0 0; color: var(--muted); line-height: 1.85; }
 
-    .contactCard a{ color: inherit; }
+    .reviewBox{
+      margin-top:14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,0.03);
+      padding: 12px;
+    }
+    .reviewBox h3{
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+    }
+    .reviewBox p{
+      margin: 0 0 8px 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .reviewBox ul{
+      margin: 0 0 0 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
 
     @media (max-width: 960px){
       .supportGrid{ grid-template-columns: 1fr; }
@@ -140,8 +162,8 @@
             <a href="../">← <span data-i18n="nav_home">Home</span></a>
           </div>
           <div class="docMeta">
-            <span data-lang="ko">SoriCue 고객지원</span>
-            <span data-lang="en" hidden>Customer Support</span>
+            <span data-lang="ko">최종 업데이트: <time datetime="2026-02-23">2026-02-23</time></span>
+            <span data-lang="en" hidden>Last updated: <time datetime="2026-02-23">2026-02-23</time></span>
           </div>
         </div>
 
@@ -151,7 +173,6 @@
         <div class="docDivider"></div>
 
         <div class="supportGrid">
-          <!-- Left: Contact + guidance -->
           <div class="card contactCard">
             <h3 class="boxTitle" data-lang="ko">문의하기</h3>
             <h3 class="boxTitle" data-lang="en" hidden>Contact</h3>
@@ -182,17 +203,17 @@
 
             <div class="hint" data-lang="ko">
               원활한 지원을 위해 아래 정보를 함께 보내주시면 도움이 됩니다.
-              <br/>- macOS 버전
-              <br/>- SoriCue 버전
-              <br/>- 재현 단계(무엇을 했을 때, 어떤 문제가 발생했는지)
-              <br/>- 가능하면 스크린샷 또는 관련 로그
+              <br />- macOS 버전
+              <br />- SoriCue 버전
+              <br />- 재현 단계(무엇을 했을 때, 어떤 문제가 발생했는지)
+              <br />- 가능하면 스크린샷 또는 관련 로그
             </div>
             <div class="hint" data-lang="en" hidden>
               To help us resolve issues faster, please include:
-              <br/>- macOS version
-              <br/>- SoriCue version
-              <br/>- Steps to reproduce (what you did, what happened)
-              <br/>- Screenshots or relevant logs, if available
+              <br />- macOS version
+              <br />- SoriCue version
+              <br />- Steps to reproduce (what you did, what happened)
+              <br />- Screenshots or relevant logs, if available
             </div>
 
             <div class="kvs" aria-label="Support email">
@@ -206,10 +227,14 @@
                 <div class="k" data-lang="en" hidden>Suggested subject</div>
                 <div class="v">SoriCue Support Request</div>
               </div>
+              <div class="kv">
+                <div class="k" data-lang="ko">OAuth 검토 문의</div>
+                <div class="k" data-lang="en" hidden>OAuth review contact</div>
+                <div class="v"><a href="mailto:support@soricue.com?subject=OAuth%20Review%20Request">support@soricue.com</a></div>
+              </div>
             </div>
           </div>
 
-          <!-- Right: FAQ -->
           <div class="card">
             <h3 class="boxTitle" data-lang="ko">자주 묻는 질문</h3>
             <h3 class="boxTitle" data-lang="en" hidden>FAQ</h3>
@@ -238,6 +263,35 @@
                 <p data-lang="en" hidden>
                   Licenses can typically be activated on up to two devices (may vary by plan/product).
                   If you switch devices, deactivate on the previous device and activate on the new one.
+                </p>
+              </details>
+
+              <details>
+                <summary data-lang="ko">Google Calendar/Tasks 권한을 왜 요청하나요?</summary>
+                <summary data-lang="en" hidden>Why does SoriCue request Google Calendar/Tasks scopes?</summary>
+                <p data-lang="ko">
+                  사용자가 요청한 일정/할 일 생성·조회·수정·삭제 기능을 수행하기 위해서만 권한을 요청합니다.
+                  요청 범위는 <code>.../auth/calendar.events</code>, <code>.../auth/tasks</code>이며,
+                  필요한 최소 데이터만 사용합니다.
+                </p>
+                <p data-lang="en" hidden>
+                  We request scopes only to perform user-requested event/task creation, read, update, and deletion.
+                  Requested scopes are <code>.../auth/calendar.events</code> and <code>.../auth/tasks</code>,
+                  and we use only the minimum data needed.
+                </p>
+              </details>
+
+              <details>
+                <summary data-lang="ko">Google 권한은 어떻게 철회하나요?</summary>
+                <summary data-lang="en" hidden>How can I revoke Google permissions?</summary>
+                <p data-lang="ko">
+                  언제든지
+                  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 권한 관리</a>
+                  에서 SoriCue 접근 권한을 철회할 수 있습니다.
+                </p>
+                <p data-lang="en" hidden>
+                  You can revoke SoriCue access at any time in
+                  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.
                 </p>
               </details>
 
@@ -278,6 +332,29 @@
           <div class="calloutDesc" data-lang="en" hidden>
             We’ll respond as quickly as possible. Clear reproduction steps help us resolve issues faster.
           </div>
+        </div>
+
+        <div class="reviewBox">
+          <h3 data-lang="ko">Google OAuth 검토팀 안내</h3>
+          <h3 data-lang="en" hidden>For Google OAuth Review Team</h3>
+
+          <p data-lang="ko">
+            검토 관련 문의는 <a href="mailto:support@soricue.com">support@soricue.com</a> 으로 연락해 주세요.
+            요청 시 테스트 계정/재현 절차를 제공합니다.
+          </p>
+          <p data-lang="en" hidden>
+            For review support, contact <a href="mailto:support@soricue.com">support@soricue.com</a>.
+            Test account details and reproduction steps are provided upon request.
+          </p>
+
+          <ul data-lang="ko">
+            <li>재현 예시: 로그인 → Google 동의 화면 → 일정 생성/수정 → 할 일 생성/완료</li>
+            <li>요청 권한: <code>.../auth/calendar.events</code>, <code>.../auth/tasks</code></li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Example flow: sign in → OAuth consent → create/update event → create/complete task</li>
+            <li>Requested scopes: <code>.../auth/calendar.events</code>, <code>.../auth/tasks</code></li>
+          </ul>
         </div>
       </section>
     </main>
