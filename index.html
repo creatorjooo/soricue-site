@@ -33,6 +33,31 @@
       color: var(--text);
       font-size: 12px;
     }
+    .reviewBox{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      background: rgba(255,255,255,0.03);
+      padding:12px;
+    }
+    .reviewBox h3{
+      margin:0 0 8px;
+      font-size:15px;
+      letter-spacing:-0.2px;
+    }
+    .reviewBox p{
+      margin:0 0 8px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:13px;
+    }
+    .reviewBox ul{
+      margin:0 0 0 18px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:13px;
+    }
+    .reviewBox a{ color: inherit; }
   </style>
 </head>
 <body>
@@ -85,7 +110,7 @@
           </div>
 
           <div class="cta">
-            <a class="btn primary" href="#" id="downloadBtn">
+            <a class="btn primary" href="./support/" id="downloadBtn">
               <span data-i18n="btn_download">Download</span>
               <span class="sub" data-i18n="btn_download_sub">Coming soon</span>
             </a>
@@ -207,6 +232,27 @@
           </div>
           <p class="scopeLine"><code>https://www.googleapis.com/auth/calendar.events</code></p>
           <p class="scopeLine"><code>https://www.googleapis.com/auth/tasks</code></p>
+        </div>
+
+        <div class="reviewBox">
+          <h3>
+            <span data-lang="ko">Google OAuth 검토팀 안내</span>
+            <span data-lang="en" hidden>For Google OAuth Review Team</span>
+          </h3>
+          <p>
+            <span data-lang="ko">검토 관련 문의: <a href="mailto:support@soricue.com">support@soricue.com</a></span>
+            <span data-lang="en" hidden>Review contact: <a href="mailto:support@soricue.com">support@soricue.com</a></span>
+          </p>
+          <ul>
+            <li>
+              <span data-lang="ko">데모 영상: <a href="https://youtu.be/8nT7NS_6eBI" target="_blank" rel="noopener">https://youtu.be/8nT7NS_6eBI</a></span>
+              <span data-lang="en" hidden>Demo video: <a href="https://youtu.be/8nT7NS_6eBI" target="_blank" rel="noopener">https://youtu.be/8nT7NS_6eBI</a></span>
+            </li>
+            <li>
+              <span data-lang="ko">재현 흐름: 로그인 → OAuth 동의 → 일정 생성/수정 → 할 일 생성/완료</span>
+              <span data-lang="en" hidden>Flow: sign-in → OAuth consent → create/update event → create/complete task</span>
+            </li>
+          </ul>
         </div>
       </section>
 
