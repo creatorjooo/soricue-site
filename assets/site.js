@@ -1,7 +1,6 @@
 (function () {
   const $ = (sel) => document.querySelector(sel);
 
-  // 홈처럼 짧은 텍스트: data-i18n="key"를 언어별로 바꿔치기
   const I18N = {
     ko: {
       nav_home: "Home",
@@ -64,6 +63,8 @@
 
       footer_note: "Built for macOS productivity",
       badge_platform: "macOS",
+
+      download_alert: "다운로드 링크는 준비 중입니다."
     },
 
     en: {
@@ -127,7 +128,9 @@
 
       footer_note: "Built for macOS productivity",
       badge_platform: "macOS",
-    },
+
+      download_alert: "The download link is coming soon."
+    }
   };
 
   function applyI18n(lang) {
@@ -135,12 +138,11 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (!key) return;
-      if (dict[key] == null) return; // 키가 없으면 그대로 둠
+      if (dict[key] == null) return;
       el.textContent = dict[key];
     });
   }
 
-  // 문서(약관/프라이버시/서포트)처럼 긴 텍스트: data-lang="ko|en" 블록 표시/숨김
   function applyLangBlocks(lang) {
     document.querySelectorAll("[data-lang]").forEach((el) => {
       const target = el.getAttribute("data-lang");
@@ -176,8 +178,7 @@
     const root = document.documentElement;
 
     if (theme === "system") {
-      const prefersDark =
-        window.matchMedia &&
+      const prefersDark = window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       root.setAttribute("data-theme", prefersDark ? "dark" : "light");
@@ -209,18 +210,22 @@
     if (themeBtn) {
       themeBtn.addEventListener("click", () => {
         const current = localStorage.getItem("soricue_theme") || detectInitialTheme();
-        const next =
-          current === "light" ? "dark" : current === "dark" ? "system" : "light";
+        const next = current === "light" ? "dark" : current === "dark" ? "system" : "light";
         applyTheme(next);
       });
     }
 
-    // 다운로드 버튼 데모
     const dl = $("#downloadBtn");
     if (dl) {
       dl.addEventListener("click", (e) => {
+        const href = (dl.getAttribute("href") || "").trim().toLowerCase();
+        const isPlaceholder = href === "" || href === "#" || href.startsWith("javascript:");
+        if (!isPlaceholder) return;
+
         e.preventDefault();
-        alert("다운로드 링크는 준비 중입니다.");
+        const lang = localStorage.getItem("soricue_lang") || detectInitialLang();
+        const dict = I18N[lang] || I18N.en;
+        alert(dict.download_alert || I18N.en.download_alert);
       });
     }
   }
@@ -234,7 +239,6 @@
     const theme = detectInitialTheme();
     applyTheme(theme);
 
-    // 시스템 테마 변경 감지(시스템 모드일 때만 반영)
     if (window.matchMedia) {
       const mq = window.matchMedia("(prefers-color-scheme: dark)");
       mq.addEventListener?.("change", () => {
