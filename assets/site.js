@@ -133,6 +133,51 @@
     }
   };
 
+  const HEAD_I18N = {
+    "/": {
+      ko: {
+        title: "SoriCue — Speak. Trigger. Done.",
+        description: "SoriCue는 macOS 메뉴바에서 음성 입력으로 Google Calendar/Tasks 일정·할 일을 빠르게 처리하는 앱입니다.",
+        ogDescription: "메뉴바에서 음성 입력으로 Google Calendar/Tasks 일정·할 일을 빠르게 처리하는 macOS 앱"
+      },
+      en: {
+        title: "SoriCue — Speak. Trigger. Done.",
+        description: "SoriCue is a macOS menu bar app for handling Google Calendar and Google Tasks with voice-driven input.",
+        ogDescription: "A macOS app that lets you manage Google Calendar and Google Tasks from the menu bar with voice."
+      }
+    },
+    "/support/": {
+      ko: {
+        title: "SoriCue — Support",
+        description: "SoriCue 고객지원 / Support"
+      },
+      en: {
+        title: "SoriCue — Support",
+        description: "SoriCue support, contact information, and FAQ."
+      }
+    },
+    "/privacy/": {
+      ko: {
+        title: "SoriCue — Privacy",
+        description: "SoriCue 개인정보처리방침 / Privacy Policy"
+      },
+      en: {
+        title: "SoriCue — Privacy",
+        description: "SoriCue Privacy Policy."
+      }
+    },
+    "/terms/": {
+      ko: {
+        title: "SoriCue — Terms",
+        description: "SoriCue 이용약관 / Terms of Service"
+      },
+      en: {
+        title: "SoriCue — Terms",
+        description: "SoriCue Terms of Service."
+      }
+    }
+  };
+
   function applyI18n(lang) {
     const dict = I18N[lang] || I18N.en;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -148,6 +193,37 @@
       const target = el.getAttribute("data-lang");
       el.hidden = target !== lang;
     });
+  }
+
+  function normalizePath(pathname) {
+    if (!pathname || pathname === "/") return "/";
+    return pathname.endsWith("/") ? pathname : `${pathname}/`;
+  }
+
+  function applyHeadI18n(lang) {
+    const path = normalizePath(window.location.pathname);
+    const page = HEAD_I18N[path];
+    if (!page) return;
+
+    const head = page[lang] || page.en;
+    if (!head) return;
+
+    if (head.title) document.title = head.title;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && head.description) {
+      metaDescription.setAttribute("content", head.description);
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && head.title) {
+      ogTitle.setAttribute("content", head.title);
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription && (head.ogDescription || head.description)) {
+      ogDescription.setAttribute("content", head.ogDescription || head.description);
+    }
   }
 
   function detectInitialLang() {
@@ -166,6 +242,7 @@
 
     applyI18n(lang);
     applyLangBlocks(lang);
+    applyHeadI18n(lang);
   }
 
   function detectInitialTheme() {
