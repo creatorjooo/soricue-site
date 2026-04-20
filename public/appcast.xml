@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>SoriCue</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Mon, 20 Apr 2026 17:26:01 +0900</pubDate>
+            <link>https://soricue.com</link>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://soricue.com/downloads/SoriCue-1.0-1.zip" length="38332196" type="application/octet-stream" sparkle:edSignature="YaQUFQuwqTke2e/Kt/32Mt2gksav0pqbd/VkpCGOI7EMstpFmFRvTVJVyExzol+lNUqnHoh8qaUBv1JJMJLBBA=="/>
+        </item>
+    </channel>
+</rss>
