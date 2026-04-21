@@ -3,35 +3,36 @@
 
   const I18N = {
     ko: {
-      nav_home: "Home",
-      nav_support: "Support",
-      nav_privacy: "Privacy",
-      nav_terms: "Terms",
+      nav_home: "홈",
+      nav_support: "지원",
+      nav_privacy: "개인정보",
+      nav_terms: "약관",
+      nav_review: "검토자료",
 
-      btn_theme: "Theme",
+      btn_theme: "테마",
 
-      hero_title: "SoriCue — 말하면, 바로 실행됩니다.",
-      hero_subtitle: "메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱입니다.",
-      hero_note: "v0.1 목표: 설치 가능 + 자동 업데이트 + 라이선스(2대) 기반을 안정적으로 완성합니다.",
+      hero_title: "말하면, 바로 끝납니다.",
+      hero_subtitle: "받아쓰기부터 Google Calendar/Tasks 실행까지, 메뉴바에서 조용히 처리하는 macOS 음성 비서입니다.",
+      hero_note: "구매 후 2대까지 활성화. 자동 업데이트를 지원합니다.",
 
-      pill_1: "Push-to-Talk",
-      pill_2: "Dictation",
-      pill_3: "Commands",
-      pill_4: "AI Actions",
+      pill_1: "눌러 말하기",
+      pill_2: "받아쓰기",
+      pill_3: "명령",
+      pill_4: "AI 작업",
 
       btn_download: "Download",
       btn_download_sub: "Coming soon",
-      btn_support: "Support",
-      btn_waitlist: "Get notified",
+      btn_support: "지원",
+      btn_waitlist: "알림 받기",
 
-      preview_title: "Menu Bar • Instant Actions",
-      preview_k1: "Hotkey",
-      preview_k2: "Mode",
-      preview_k3: "Output",
-      preview_v2: "Hold to talk",
-      preview_v3: "Paste into any app",
-      preview_mono: "“회의 요약 3줄로 정리해줘”",
-      preview_footer: "Fast • Minimal • Reliable",
+      preview_title: "메뉴바 • 즉시 실행",
+      preview_k1: "단축키",
+      preview_k2: "모드",
+      preview_k3: "결과",
+      preview_v2: "누르는 동안 말하기",
+      preview_v3: "현재 앱에 바로 입력",
+      preview_mono: "“내일 오전 6시 점심 일정 추가해줘”",
+      preview_footer: "빠르게 • 가볍게 • 안정적으로",
 
       f1_title: "빠른 입력",
       f1_desc: "어떤 앱에서도 즉시 텍스트 입력",
@@ -61,7 +62,7 @@
       callout_title: "Business-ready basics",
       callout_desc: "“설치/업데이트/라이선스”가 갖춰지면 제품 신뢰도가 확 올라갑니다.",
 
-      footer_note: "Built for macOS productivity",
+      footer_note: "macOS 생산성을 위해 제작",
       badge_platform: "macOS",
 
       download_alert: "다운로드 링크는 준비 중입니다."
@@ -72,12 +73,13 @@
       nav_support: "Support",
       nav_privacy: "Privacy",
       nav_terms: "Terms",
+      nav_review: "Review",
 
       btn_theme: "Theme",
 
-      hero_title: "SoriCue — Speak. Trigger. Done.",
-      hero_subtitle: "A macOS menu-bar app that handles dictation, commands, and AI actions with push-to-talk speed.",
-      hero_note: "v0.1 goal: A solid, shippable foundation — installer, auto updates, and 2-device licensing.",
+      hero_title: "Speak, get it done.",
+      hero_subtitle: "Dictation, Google Calendar/Tasks, and AI actions from a quiet macOS menu bar assistant.",
+      hero_note: "Buy once, activate on 2 devices, and stay current with automatic updates.",
 
       pill_1: "Push-to-Talk",
       pill_2: "Dictation",
@@ -95,7 +97,7 @@
       preview_k3: "Output",
       preview_v2: "Hold to talk",
       preview_v3: "Paste into any app",
-      preview_mono: "“Summarize this meeting in 3 bullets.”",
+      preview_mono: "“Add lunch tomorrow at 6 AM.”",
       preview_footer: "Fast • Minimal • Reliable",
 
       f1_title: "Instant input",

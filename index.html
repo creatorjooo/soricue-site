@@ -25,13 +25,17 @@
       line-height: 1.7;
     }
     .scopeLine code {
+      display: inline-block;
+      max-width: 100%;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       background: rgba(255,255,255,0.06);
       border: 1px solid var(--line);
       padding: 2px 6px;
       border-radius: 8px;
-      color: var(--text);
+      color: var(--ink);
       font-size: 12px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .reviewBox{
       margin-top:12px;
@@ -75,6 +79,7 @@
         <a href="./support/" data-i18n="nav_support">Support</a>
         <a href="./privacy/" data-i18n="nav_privacy">Privacy</a>
         <a href="./terms/" data-i18n="nav_terms">Terms</a>
+        <a href="./#review" data-i18n="nav_review">Review</a>
       </nav>
 
       <div class="navActions">
@@ -89,15 +94,26 @@
       </div>
     </header>
 
-    <main id="main" class="hero">
+    <main id="main" class="hero landing">
       <section class="heroTop">
         <div class="heroCopy">
-          <h1 data-i18n="hero_title">SoriCue — 말하면, 바로 실행됩니다.</h1>
+          <div class="heroEyebrow">
+            <span class="eyebrowChip">
+              <span data-lang="ko">메뉴바 생산성 앱</span>
+              <span data-lang="en" hidden>Menu bar productivity</span>
+            </span>
+            <span class="eyebrowText">
+              <span data-lang="ko">Google Calendar/Tasks + Voice + AI</span>
+              <span data-lang="en" hidden>Google Calendar/Tasks + Voice + AI</span>
+            </span>
+          </div>
+
+          <h1 data-i18n="hero_title">말하면, 바로 끝납니다.</h1>
           <p class="lead" data-i18n="hero_subtitle">
-            메뉴바에서 푸시-투-톡으로 받아쓰기/명령/AI 작업을 빠르게 처리하는 macOS 앱입니다.
+            받아쓰기부터 Google Calendar/Tasks 실행까지, 메뉴바에서 조용히 처리하는 macOS 음성 비서입니다.
           </p>
 
-          <p class="fine" style="margin-top:10px;">
+          <p class="fine heroContext">
             <span data-lang="ko">Google Calendar/Tasks를 연결하면 “내일 오전 6시 점심 일정 추가” 같은 요청을 실제 일정/할 일로 반영합니다.</span>
             <span data-lang="en" hidden>When connected to Google Calendar/Tasks, SoriCue can execute requests like “Add a lunch event tomorrow at 6 AM” as real event/task updates.</span>
           </p>
@@ -120,12 +136,30 @@
             </a>
           </div>
 
-          <p class="fine" data-i18n="hero_note">
-            v0.1 목표: 설치 가능 + 자동 업데이트 + 라이선스(2대) 기반을 안정적으로 완성합니다.
-          </p>
+          <div class="heroMeta">
+            <p class="fine heroNote" data-i18n="hero_note">
+              v0.1 목표: 설치 가능 + 자동 업데이트 + 라이선스(2대) 기반을 안정적으로 완성합니다.
+            </p>
+
+            <div class="signalRow" aria-label="Trust signals">
+              <span class="signal">
+                <span data-lang="ko">Google OAuth 검토 대응</span>
+                <span data-lang="en" hidden>Google OAuth ready</span>
+              </span>
+              <span class="signal">
+                <span data-lang="ko">2대 라이선스</span>
+                <span data-lang="en" hidden>2-device license</span>
+              </span>
+              <span class="signal">
+                <span data-lang="ko">자동 업데이트 채널</span>
+                <span data-lang="en" hidden>Auto update channel</span>
+              </span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="heroCard" role="region" aria-label="Product preview">
+        <div class="heroCard heroConsole" role="region" aria-label="Product preview">
           <div class="previewHeader">
             <div class="dots" aria-hidden="true">
               <span></span><span></span><span></span>
@@ -133,22 +167,69 @@
             <div class="previewTitle" data-i18n="preview_title">Menu Bar • Instant Actions</div>
           </div>
 
-          <div class="previewBody">
-            <div class="previewLine">
-              <span class="k" data-i18n="preview_k1">Hotkey</span>
-              <span class="v">⌥ Space</span>
+          <div class="previewPrompt">
+            <div class="promptLabel">
+              <span data-lang="ko">실행 예시</span>
+              <span data-lang="en" hidden>Live example</span>
             </div>
-            <div class="previewLine">
-              <span class="k" data-i18n="preview_k2">Mode</span>
-              <span class="v" data-i18n="preview_v2">Hold to talk</span>
-            </div>
-            <div class="previewLine">
-              <span class="k" data-i18n="preview_k3">Output</span>
-              <span class="v" data-i18n="preview_v3">Paste into any app</span>
-            </div>
-            <div class="previewDivider"></div>
             <div class="previewMono" data-i18n="preview_mono">
-              “회의 요약 3줄로 정리해줘”
+              “내일 오전 6시 점심 일정 추가해줘”
+            </div>
+          </div>
+
+          <div class="previewStack">
+            <div class="previewPanel">
+              <div class="previewPanelHead">
+                <span class="previewPanelLabel">
+                  <span data-lang="ko">입력 해석</span>
+                  <span data-lang="en" hidden>Intent parsing</span>
+                </span>
+                <span class="previewPanelState">
+                  <span data-lang="ko">준비 완료</span>
+                  <span data-lang="en" hidden>Ready</span>
+                </span>
+              </div>
+
+              <div class="previewLine">
+                <span class="k" data-i18n="preview_k1">Hotkey</span>
+                <span class="v">⌥ Space</span>
+              </div>
+              <div class="previewLine">
+                <span class="k" data-i18n="preview_k2">Mode</span>
+                <span class="v" data-i18n="preview_v2">Hold to talk</span>
+              </div>
+              <div class="previewLine">
+                <span class="k" data-i18n="preview_k3">Output</span>
+                <span class="v" data-i18n="preview_v3">Paste into any app</span>
+              </div>
+            </div>
+
+            <div class="previewPanel previewPanelAlt">
+              <div class="previewPanelHead">
+                <span class="previewPanelLabel">
+                  <span data-lang="ko">작업 큐</span>
+                  <span data-lang="en" hidden>Action queue</span>
+                </span>
+                <span class="previewTag">
+                  <span data-lang="ko">Google 연결</span>
+                  <span data-lang="en" hidden>Google sync</span>
+                </span>
+              </div>
+
+              <ul class="previewList">
+                <li>
+                  <span data-lang="ko">일정 생성/수정/삭제 요청 처리</span>
+                  <span data-lang="en" hidden>Create, edit, or delete calendar events</span>
+                </li>
+                <li>
+                  <span data-lang="ko">할 일 생성/완료/정리 흐름 지원</span>
+                  <span data-lang="en" hidden>Support create, complete, and organize task flows</span>
+                </li>
+                <li>
+                  <span data-lang="ko">필요 시 AI 요약/명령 해석까지 연결</span>
+                  <span data-lang="en" hidden>Chain AI summaries and command interpretation when needed</span>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -159,34 +240,59 @@
         </div>
       </section>
 
-      <section class="grid" aria-label="Key features">
-        <article class="card">
+      <section class="grid homeStats" aria-label="Key features">
+        <article class="card featureCard">
+          <div class="featureKicker">Input</div>
           <h3 data-i18n="f1_title">빠른 입력</h3>
           <p data-i18n="f1_desc">어떤 앱에서도 즉시 텍스트 입력</p>
         </article>
-        <article class="card">
+        <article class="card featureCard">
+          <div class="featureKicker">Delivery</div>
           <h3 data-i18n="f2_title">자동 업데이트</h3>
           <p data-i18n="f2_desc">Sparkle 기반 업데이트 운영</p>
         </article>
-        <article class="card">
+        <article class="card featureCard">
+          <div class="featureKicker">License</div>
           <h3 data-i18n="f3_title">라이선스</h3>
           <p data-i18n="f3_desc">기본 2대 활성화 제한을 지원</p>
         </article>
       </section>
 
-      <section class="section">
-        <header class="sectionHead">
+      <section id="review" class="reviewMaterials" aria-label="Review materials">
+        <header class="reviewIntro">
+          <div class="sectionLabel">
+            <span data-lang="ko">검토자료</span>
+            <span data-lang="en" hidden>Review materials</span>
+          </div>
           <h2>
-            <span data-lang="ko">Google Calendar/Tasks 연동</span>
-            <span data-lang="en" hidden>Google Calendar/Tasks Integration</span>
+            <span data-lang="ko">필수 정보는 그대로 보존했습니다.</span>
+            <span data-lang="en" hidden>All required details are preserved here.</span>
           </h2>
           <p>
-            <span data-lang="ko">사용자가 요청한 일정/할 일 생성·조회·수정·삭제를 최소 권한으로 수행합니다.</span>
-            <span data-lang="en" hidden>We perform user-requested event/task create-read-update-delete with minimum required access.</span>
+            <span data-lang="ko">Google 연동, OAuth 검토, AI 투명성, 동작 방식, 로드맵 정보를 원문 그대로 확인할 수 있습니다.</span>
+            <span data-lang="en" hidden>Google integration, OAuth review, AI transparency, workflow, and roadmap details remain available in full.</span>
           </p>
         </header>
 
-        <div class="grid" aria-label="Google integration features">
+        <section class="section homeSection">
+          <header class="sectionHead">
+          <div class="sectionTitleWrap">
+            <div class="sectionLabel">
+              <span data-lang="ko">핵심 연동</span>
+              <span data-lang="en" hidden>Core integration</span>
+            </div>
+            <h2>
+              <span data-lang="ko">Google Calendar/Tasks 연동</span>
+              <span data-lang="en" hidden>Google Calendar/Tasks Integration</span>
+            </h2>
+            <p>
+              <span data-lang="ko">사용자가 요청한 일정/할 일 생성·조회·수정·삭제를 최소 권한으로 수행합니다.</span>
+              <span data-lang="en" hidden>We perform user-requested event/task create-read-update-delete with minimum required access.</span>
+            </p>
+          </div>
+          </header>
+
+        <div class="grid integrationGrid" aria-label="Google integration features">
           <article class="card">
             <h3>
               <span data-lang="ko">일정 처리</span>
@@ -221,71 +327,79 @@
           </article>
         </div>
 
-        <div class="callout">
-          <div class="calloutTitle">
-            <span data-lang="ko">Google API 데이터 사용 고지</span>
-            <span data-lang="en" hidden>Google API data use notice</span>
+        <div class="trustGrid">
+          <div class="callout">
+            <div class="calloutTitle">
+              <span data-lang="ko">Google API 데이터 사용 고지</span>
+              <span data-lang="en" hidden>Google API data use notice</span>
+            </div>
+            <div class="calloutDesc">
+              <span data-lang="ko">요청 범위, 데이터 사용 목적, 권한 철회 방법은 Privacy 정책의 “Google API 데이터 사용” 섹션에서 확인할 수 있습니다.</span>
+              <span data-lang="en" hidden>Requested scopes, usage purpose, and access-revocation steps are documented in the “Google API data use” section of our Privacy Policy.</span>
+            </div>
+            <p class="scopeLine"><code>https://www.googleapis.com/auth/calendar.events</code></p>
+            <p class="scopeLine"><code>https://www.googleapis.com/auth/tasks</code></p>
           </div>
-          <div class="calloutDesc">
-            <span data-lang="ko">요청 범위, 데이터 사용 목적, 권한 철회 방법은 Privacy 정책의 “Google API 데이터 사용” 섹션에서 확인할 수 있습니다.</span>
-            <span data-lang="en" hidden>Requested scopes, usage purpose, and access-revocation steps are documented in the “Google API data use” section of our Privacy Policy.</span>
+
+          <div class="reviewBox">
+            <h3>
+              <span data-lang="ko">Google OAuth 검토팀 안내</span>
+              <span data-lang="en" hidden>For Google OAuth Review Team</span>
+            </h3>
+            <p>
+              <span data-lang="ko">검토 관련 문의: <a href="mailto:support@soricue.com">support@soricue.com</a></span>
+              <span data-lang="en" hidden>Review contact: <a href="mailto:support@soricue.com">support@soricue.com</a></span>
+            </p>
+            <ul>
+              <li>
+                <span data-lang="ko">데모 영상: <a href="https://youtu.be/8nT7NS_6eBI" target="_blank" rel="noopener">https://youtu.be/8nT7NS_6eBI</a></span>
+                <span data-lang="en" hidden>Demo video: <a href="https://youtu.be/8nT7NS_6eBI" target="_blank" rel="noopener">https://youtu.be/8nT7NS_6eBI</a></span>
+              </li>
+              <li>
+                <span data-lang="ko">재현 흐름: 로그인 → OAuth 동의 → 일정 생성/수정 → 할 일 생성/완료</span>
+                <span data-lang="en" hidden>Flow: sign-in → OAuth consent → create/update event → create/complete task</span>
+              </li>
+            </ul>
           </div>
-          <p class="scopeLine"><code>https://www.googleapis.com/auth/calendar.events</code></p>
-          <p class="scopeLine"><code>https://www.googleapis.com/auth/tasks</code></p>
-        </div>
 
-        <div class="reviewBox">
-          <h3>
-            <span data-lang="ko">Google OAuth 검토팀 안내</span>
-            <span data-lang="en" hidden>For Google OAuth Review Team</span>
-          </h3>
-          <p>
-            <span data-lang="ko">검토 관련 문의: <a href="mailto:support@soricue.com">support@soricue.com</a></span>
-            <span data-lang="en" hidden>Review contact: <a href="mailto:support@soricue.com">support@soricue.com</a></span>
-          </p>
-          <ul>
-            <li>
-              <span data-lang="ko">데모 영상: <a href="https://youtu.be/8nT7NS_6eBI" target="_blank" rel="noopener">https://youtu.be/8nT7NS_6eBI</a></span>
-              <span data-lang="en" hidden>Demo video: <a href="https://youtu.be/8nT7NS_6eBI" target="_blank" rel="noopener">https://youtu.be/8nT7NS_6eBI</a></span>
-            </li>
-            <li>
-              <span data-lang="ko">재현 흐름: 로그인 → OAuth 동의 → 일정 생성/수정 → 할 일 생성/완료</span>
-              <span data-lang="en" hidden>Flow: sign-in → OAuth consent → create/update event → create/complete task</span>
-            </li>
-          </ul>
+          <div class="reviewBox">
+            <h3>
+              <span data-lang="ko">AI Transparency</span>
+              <span data-lang="en" hidden>AI Transparency</span>
+            </h3>
+            <p>
+              <span data-lang="ko">SoriCue는 AI 기능 제공을 위해 OpenAI와 Groq 서비스를 사용합니다.</span>
+              <span data-lang="en" hidden>SoriCue uses OpenAI and Groq for AI-powered features.</span>
+            </p>
+            <ul>
+              <li>
+                <span data-lang="ko">사용 중인 AI 서비스: OpenAI, Groq</span>
+                <span data-lang="en" hidden>AI services used: OpenAI, Groq</span>
+              </li>
+              <li>
+                <span data-lang="ko">용도: 음성 전사, 요청 해석, AI 작업 실행</span>
+                <span data-lang="en" hidden>Purpose: speech transcription, request interpretation, and AI actions</span>
+              </li>
+              <li>
+                <span data-lang="ko">선택한 기능과 설정에 따라 사용자 음성 또는 텍스트가 OpenAI 또는 Groq를 통해 처리될 수 있습니다.</span>
+                <span data-lang="en" hidden>Depending on the selected feature and settings, user audio or text may be processed by OpenAI or Groq.</span>
+              </li>
+            </ul>
+          </div>
         </div>
+        </section>
 
-        <div class="reviewBox">
-          <h3>
-            <span data-lang="ko">AI Transparency</span>
-            <span data-lang="en" hidden>AI Transparency</span>
-          </h3>
-          <p>
-            <span data-lang="ko">SoriCue는 AI 기능 제공을 위해 OpenAI와 Groq 서비스를 사용합니다.</span>
-            <span data-lang="en" hidden>SoriCue uses OpenAI and Groq for AI-powered features.</span>
-          </p>
-          <ul>
-            <li>
-              <span data-lang="ko">사용 중인 AI 서비스: OpenAI, Groq</span>
-              <span data-lang="en" hidden>AI services used: OpenAI, Groq</span>
-            </li>
-            <li>
-              <span data-lang="ko">용도: 음성 전사, 요청 해석, AI 작업 실행</span>
-              <span data-lang="en" hidden>Purpose: speech transcription, request interpretation, and AI actions</span>
-            </li>
-            <li>
-              <span data-lang="ko">선택한 기능과 설정에 따라 사용자 음성 또는 텍스트가 OpenAI 또는 Groq를 통해 처리될 수 있습니다.</span>
-              <span data-lang="en" hidden>Depending on the selected feature and settings, user audio or text may be processed by OpenAI or Groq.</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section">
-        <header class="sectionHead">
-          <h2 data-i18n="how_title">How it works</h2>
-          <p data-i18n="how_subtitle">짧게 말하면, 입력/명령/AI 작업을 “한 흐름”으로 처리합니다.</p>
-        </header>
+        <section class="section homeSection">
+          <header class="sectionHead">
+          <div class="sectionTitleWrap">
+            <div class="sectionLabel">
+              <span data-lang="ko">동작 방식</span>
+              <span data-lang="en" hidden>How it works</span>
+            </div>
+            <h2 data-i18n="how_title">How it works</h2>
+            <p data-i18n="how_subtitle">짧게 말하면, 입력/명령/AI 작업을 “한 흐름”으로 처리합니다.</p>
+          </div>
+          </header>
 
         <div class="steps">
           <div class="step">
@@ -310,13 +424,19 @@
             </div>
           </div>
         </div>
-      </section>
+        </section>
 
-      <section class="section">
-        <header class="sectionHead">
-          <h2 data-i18n="road_title">v0.1 Roadmap</h2>
-          <p data-i18n="road_subtitle">먼저 “배포 가능한 기본기”부터 확실하게 만듭니다.</p>
-        </header>
+        <section class="section homeSection">
+          <header class="sectionHead">
+          <div class="sectionTitleWrap">
+            <div class="sectionLabel">
+              <span data-lang="ko">로드맵</span>
+              <span data-lang="en" hidden>Roadmap</span>
+            </div>
+            <h2 data-i18n="road_title">v0.1 Roadmap</h2>
+            <p data-i18n="road_subtitle">먼저 “배포 가능한 기본기”부터 확실하게 만듭니다.</p>
+          </div>
+          </header>
 
         <div class="road">
           <div class="roadItem">
@@ -348,6 +468,7 @@
             “설치/업데이트/라이선스”가 갖춰지면 제품 신뢰도가 확 올라갑니다.
           </div>
         </div>
+        </section>
       </section>
     </main>
 
@@ -361,6 +482,8 @@
         <a href="./privacy/" data-i18n="nav_privacy">Privacy</a>
         <span aria-hidden="true">·</span>
         <a href="./terms/" data-i18n="nav_terms">Terms</a>
+        <span aria-hidden="true">·</span>
+        <a href="./#review" data-i18n="nav_review">Review</a>
         <span aria-hidden="true">·</span>
         <a href="./support/" data-i18n="nav_support">Support</a>
       </div>
