@@ -9,7 +9,7 @@
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://soricue.com/downloads/SoriCue-1.0-1.zip" length="38493546" type="application/octet-stream" sparkle:edSignature="8ydOD7/+/xU3IhaJotxl9kAd4IaCkoJSJW5cfTiUk7FVRbgepAZ3suijCAV9LDFOJIlYAaABEkvwsaJr+Ny3Bg=="/>
+            <enclosure url="https://soricue.com/downloads/SoriCue-1.0-1.zip" length="38735310" type="application/octet-stream" sparkle:edSignature="urokIZstqUl6juumn9CtAk6BUN6ll6InX6ahpORrnS0ATXVVk18xM1C6nqk28f9elGjAszCJedxEFtHLZ97jCw=="/>
         </item>
     </channel>
 </rss>
