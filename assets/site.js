@@ -13,7 +13,7 @@
 
       hero_title: "말하면, 바로 끝납니다.",
       hero_subtitle: "받아쓰기부터 Google Calendar/Tasks 실행까지, 메뉴바에서 조용히 처리하는 macOS 음성 비서입니다.",
-      hero_note: "최신 버전 v1.0.2 (build 3) · 구매 후 2대까지 활성화 · 자동 업데이트 지원",
+      hero_note: "최신 버전 v1.0.2 (build 4) · 구매 후 2대까지 활성화 · 자동 업데이트 지원",
 
       pill_1: "눌러 말하기",
       pill_2: "받아쓰기",
@@ -79,7 +79,7 @@
 
       hero_title: "Speak, get it done.",
       hero_subtitle: "Dictation, Google Calendar/Tasks, and AI actions from a quiet macOS menu bar assistant.",
-      hero_note: "Latest version: v1.0.2 (build 3) · Activate on 2 devices · Automatic updates included",
+      hero_note: "Latest version: v1.0.2 (build 4) · Activate on 2 devices · Automatic updates included",
 
       pill_1: "Push-to-Talk",
       pill_2: "Dictation",

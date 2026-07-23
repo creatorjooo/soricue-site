@@ -4,12 +4,12 @@
         <title>SoriCue</title>
         <item>
             <title>1.0.2</title>
-            <pubDate>Tue, 21 Jul 2026 19:50:59 +0900</pubDate>
+            <pubDate>Thu, 23 Jul 2026 22:58:11 +0900</pubDate>
             <link>https://soricue.com</link>
-            <sparkle:version>3</sparkle:version>
+            <sparkle:version>4</sparkle:version>
             <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://soricue.com/downloads/SoriCue-1.0.2-3.zip" length="43889721" type="application/octet-stream" sparkle:edSignature="KxkigUYKu9MxC2mvHLXmvDUS3QtGYGAJbHqzC6N46lDiHbtyqMykmOU7gCqkQNkrBqeX5ZEpBSLhASfN93YhAA=="/>
+            <enclosure url="https://soricue.com/downloads/SoriCue-1.0.2-4.zip" length="43888587" type="application/octet-stream" sparkle:edSignature="hOWzZziozqoK2jWfpwws2+wq3YNSvpMFyYbQ9EW9Jhmwx3CVGEghfhJuNfTKQ7pwTs8kxSp39uCmPxYxc1DVDA=="/>
         </item>
     </channel>
 </rss>
