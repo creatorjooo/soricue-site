@@ -3,13 +3,13 @@
     <channel>
         <title>SoriCue</title>
         <item>
-            <title>1.0.3</title>
-            <pubDate>Sat, 25 Jul 2026 15:19:18 +0900</pubDate>
+            <title>1.0.4</title>
+            <pubDate>Fri, 31 Jul 2026 15:19:16 +0900</pubDate>
             <link>https://soricue.com</link>
-            <sparkle:version>4</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://soricue.com/downloads/SoriCue-Sparkle-1.0.3-4.zip" length="43953789" type="application/octet-stream" sparkle:edSignature="3tUuVevvRmOPpVba4zaFzVy/y20WEyOjQn9T4TfopbUgTsiXHqFDe5XJbpFp02DywRQHPANJ3+mjhIYBY/4+Dg=="/>
+            <enclosure url="https://soricue.com/downloads/SoriCue-Sparkle-1.0.4-5.zip" length="43945813" type="application/octet-stream" sparkle:edSignature="vLuO/DdEmZgm3zi7bEU9fc117W1Zq4dbFlVFtZ3P6I01grflwEBdJ5VdfcoC9LtfW2yQj+q+KmkeUSA33vTxAw=="/>
         </item>
     </channel>
 </rss>
